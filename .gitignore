@@ -1,0 +1,12 @@
+/target
+/node_modules
+/dist
+/src-tauri/target
+/src-tauri/gen
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+backups/
+.DS_Store
+Thumbs.db

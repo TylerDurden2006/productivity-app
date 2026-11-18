@@ -1,0 +1,23 @@
+[package]
+name = "flow-desktop"
+version = "1.0.3"
+description = "Flow, a local-first focus planner"
+edition = "2021"
+rust-version = "1.85"
+
+[lib]
+name = "flow_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+flow-core = { path = "../core" }
+rusqlite = "0.40.2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-notification = "2"
+tauri-plugin-single-instance = "2"

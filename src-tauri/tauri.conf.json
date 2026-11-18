@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Flow",
+  "mainBinaryName": "Flow",
+  "version": "1.0.3",
+  "identifier": "com.flow.focus",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Flow",
+        "width": 1180,
+        "height": 800,
+        "minWidth": 900,
+        "minHeight": 650,
+        "center": true,
+        "resizable": true,
+        "fullscreen": false,
+        "dragDropEnabled": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "publisher": "Flow",
+    "category": "Productivity",
+    "shortDescription": "A local-first planner for the day.",
+    "longDescription": "Flow is a local-first planner for the day, week, month, quarter, year, and long-term goals. Habits, tasks, and plans live in one private SQLite database on your machine.",
+    "copyright": "Copyright 2026 Flow",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico"
+      },
+      "wix": {
+        "upgradeCode": "7b85ed7c-3874-5e0c-8874-56fcb7ecc233"
+      }
+    }
+  }
+}
